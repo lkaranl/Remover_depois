@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- 
+        <meta charset="UTF-8"> define a codificação de caracteres para UTF-8 (permite acentos).
+        <meta name="viewport" ...> é essencial para tornar o site responsivo em celulares.
+        <title> é o título que aparece na aba do navegador.
+        <link rel="stylesheet" href="style.css"> conecta este arquivo HTML ao arquivo CSS.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de HTML e CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>Bem-vindo à Aula de HTML</h1>
+        <p>Este é um exemplo prático de como usar tags, tabelas e formulários.</p>
+        
+        <!-- TAGS DE LINK (Ancoras) -->
+        <!-- O atributo 'href' define para onde o link aponta. Pode ser um site externo ou uma seção na mesma página (usando #id). -->
+        <nav>
+            <a href="#tabelas">Ir para Tabelas</a> | 
+            <a href="#formularios">Ir para Formulários</a> |
+            <a href="https://developer.mozilla.org/pt-BR/" target="_blank">Documentação MDN (Link Externo)</a>
+        </nav>
+    </header>
+
+    <main>
+        
+        <!-- SEÇÃO DE IMAGENS -->
+        <section>
+            <h2>Imagens</h2>
+            <p>Usamos a tag <code>&lt;img&gt;</code> para inserir imagens.</p>
+            <!-- 
+                src: Caminho da imagem (pode ser local ou uma URL).
+                alt: Texto alternativo para acessibilidade (leitura de tela) e caso a imagem não carregue.
+                width: Largura da imagem (pode ser definida aqui ou no CSS).
+            -->
+            <img src="https://via.placeholder.com/150" alt="Imagem de exemplo" width="150" height="150">
+        </section>
+
+        <hr> <!-- Linha horizontal para separar seções -->
+
+        <!-- SEÇÃO DE TABELAS -->
+        <section id="tabelas">
+            <h2>Criando uma Tabela</h2>
+            <p>A estrutura básica de uma tabela é:</p>
+            <ul>
+                <li><code>&lt;table&gt;</code>: O container da tabela.</li>
+                <li><code>&lt;thead&gt;</code>: Cabeçalho da tabela.</li>
+                <li><code>&lt;tbody&gt;</code>: Corpo da tabela com os dados.</li>
+                <li><code>&lt;tr&gt;</code>: Table Row (Linha da tabela).</li>
+                <li><code>&lt;th&gt;</code>: Table Header (Célula de cabeçalho, negrito por padrão).</li>
+                <li><code>&lt;td&gt;</code>: Table Data (Célula de dados comuns).</li>
+            </ul>
+
+            <table>
+                <!-- Cabeçalho da tabela -->
+                <thead>
+                    <tr>
+                        <th>Nome do Produto</th>
+                        <th>Categoria</th>
+                        <th>Preço (R$)</th>
+                    </tr>
+                </thead>
+                <!-- Corpo da tabela -->
+                <tbody>
+                    <tr>
+                        <td>Notebook</td>
+                        <td>Eletrônicos</td>
+                        <td>3.500,00</td>
+                    </tr>
+                    <tr>
+                        <td>Mouse Gamer</td>
+                        <td>Acessórios</td>
+                        <td>150,00</td>
+                    </tr>
+                    <tr>
+                        <td>Teclado Mecânico</td>
+                        <td>Acessórios</td>
+                        <td>300,00</td>
+                    </tr>
+                </tbody>
+                <!-- Rodapé da tabela (opcional) -->
+                <tfoot>
+                    <tr>
+                        <td colspan="2"><strong>Total</strong></td> <!-- colspan mescla colunas -->
+                        <td><strong>3.950,00</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <hr>
+
+        <!-- SEÇÃO DE FORMULÁRIOS -->
+        <section id="formularios">
+            <h2>Criando um Formulário</h2>
+            <p>Usamos a tag <code>&lt;form&gt;</code> para coletar dados do usuário.</p>
+            
+            <!-- 
+                action: Para onde os dados são enviados (ex: um arquivo PHP ou backend).
+                method: Como os dados são enviados (GET ou POST).
+            -->
+            <form action="#" method="POST">
+                
+                <!-- LABEL: Rótulo para o input. O atributo 'for' deve ser igual ao 'id' do input. -->
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" placeholder="Sua senha secreta">
+                </div>
+
+                <!-- SELECT: Lista suspensa (dropdown) -->
+                <div class="form-group">
+                    <label for="interesse">Área de Interesse:</label>
+                    <select id="interesse" name="interesse">
+                        <option value="" disabled selected>Selecione uma opção...</option>
+                        <option value="frontend">Front-end (HTML/CSS)</option>
+                        <option value="backend">Back-end (Python/Node)</option>
+                        <option value="fullstack">Full Stack</option>
+                    </select>
+                </div>
+
+                <!-- TEXTAREA: Área de texto para mensagens longas -->
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem aqui..."></textarea>
+                </div>
+
+                <!-- CHECKBOX: Múltipla escolha -->
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="newsletter" value="sim">
+                        Desejo receber novidades por e-mail.
+                    </label>
+                </div>
+
+                <!-- RADIO: Escolha única -->
+                <div class="form-group">
+                    <p>Prefere contato por:</p>
+                    <label>
+                        <input type="radio" name="contato" value="email" checked> E-mail
+                    </label>
+                    <label>
+                        <input type="radio" name="contato" value="telefone"> Telefone
+                    </label>
+                </div>
+
+                <!-- BUTTON: Botão de envio -->
+                <button type="submit">Enviar Cadastro</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Aula de HTML e CSS. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

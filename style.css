@@ -1,0 +1,177 @@
+/* 
+    Arquivo CSS: Cascading Style Sheets (Folhas de Estilo em Cascata)
+    Aqui definimos a aparência do nosso site.
+*/
+
+/* Reset básico para remover margens e preenchimentos padrões dos navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Garante que o padding não aumente o tamanho total do elemento */
+}
+
+/* Estilizando o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    /* Define a fonte */
+    background-color: #f4f4f9;
+    /* Cor de fundo suave */
+    color: #333;
+    /* Cor do texto (cinza escuro para melhor leitura) */
+    line-height: 1.6;
+    /* Altura da linha para melhorar a legibilidade */
+    padding: 20px;
+}
+
+/* Estilizando o cabeçalho */
+header {
+    background-color: #2c3e50;
+    /* Azul escuro */
+    color: white;
+    /* Texto branco */
+    padding: 20px;
+    text-align: center;
+    /* Centraliza o texto */
+    border-radius: 8px;
+    /* Arredonda as bordas */
+    margin-bottom: 20px;
+}
+
+header nav a {
+    color: #ecf0f1;
+    /* Cor clara para os links */
+    text-decoration: none;
+    /* Remove o sublinhado padrão dos links */
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+header nav a:hover {
+    color: #3498db;
+    /* Muda a cor quando o mouse passa por cima */
+    text-decoration: underline;
+}
+
+/* Estilizando as seções principais */
+section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+}
+
+h2 {
+    color: #2980b9;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* === ESTILOS DA TABELA === */
+table {
+    width: 100%;
+    /* A tabela ocupa toda a largura disponível */
+    border-collapse: collapse;
+    /* Remove o espaço entre as bordas das células */
+    margin-top: 10px;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    /* Linha divisória entre as linhas */
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Efeito 'zebra' nas linhas da tabela (linhas pares com cor diferente) */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Efeito ao passar o mouse sobre uma linha */
+tr:hover {
+    background-color: #e8f4fc;
+}
+
+/* === ESTILOS DO FORMULÁRIO === */
+form {
+    max-width: 600px;
+    /* Largura máxima do formulário */
+    margin: 0 auto;
+    /* Centraliza o formulário na tela */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    /* Espaço entre cada campo */
+}
+
+label {
+    display: block;
+    /* Faz o label ocupar uma linha inteira */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Estilizando inputs, selects e textareas */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    /* Ocupa toda a largura do container */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Estilo para quando o campo está focado (clicado) */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #3498db;
+    outline: none;
+    /* Remove a borda padrão do navegador */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Estilizando o botão de envio */
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #27ae60;
+    /* Verde */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    /* Muda o cursor para indicar que é clicável */
+    transition: background-color 0.3s;
+    /* Suaviza a mudança de cor */
+}
+
+button:hover {
+    background-color: #219150;
+    /* Verde mais escuro ao passar o mouse */
+}
+
+/* Estilizando o rodapé */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+    font-size: 0.9em;
+}
